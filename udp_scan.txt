@@ -1,0 +1,7 @@
+# Nmap 7.95 scan initiated Mon Feb  2 12:59:01 2026 as: /usr/lib/nmap/nmap --privileged -sU -oN udp_scan.txt 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000050s latency).
+All 1000 scanned ports on localhost (127.0.0.1) are in ignored states.
+Not shown: 1000 closed udp ports (port-unreach)
+
+# Nmap done at Mon Feb  2 12:59:02 2026 -- 1 IP address (1 host up) scanned in 0.21 seconds
