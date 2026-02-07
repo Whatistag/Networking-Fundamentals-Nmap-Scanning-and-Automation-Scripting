@@ -107,7 +107,7 @@ o	Broken Access Control
 
 o	Insecure Authentication
 
-4. MySQL / MariaDB (Port 3306)
+2. MySQL / MariaDB (Port 3306)
    
 •	Purpose:
 Port 3306 is used by MySQL/MariaDB database servers to manage and store application data, including user credentials, product information, and transaction records.
