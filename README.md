@@ -48,18 +48,21 @@ Target Description
 
 # Nmap Scans Performed
 1. SYN Scan - Performs a stealth TCP SYN scan
+
 nmap -sS 127.0.0.1 -oN syn_scan.txt
  <img width="906" height="277" alt="image" src="https://github.com/user-attachments/assets/0356b1df-d91b-42bf-b1a4-623a26b5c833" />
 
 Screenshot 1 - Output for SYN scan
 
 2. TCP Connect Scan - Uses a full TCP handshake and Confirms service accessibility on the Juice Shop port
+
 nmap -sT 127.0.0.1 -oN tcp_scan.txt
 <img width="908" height="280" alt="image" src="https://github.com/user-attachments/assets/783269bc-a1da-4172-bbe8-72acdd1dee65" /> 
 
 Screenshot 2 – Output for TCP scan
 
 3. UDP Scan - Checks for open UDP services on localhost
+
 nmap -sU 127.0.0.1 -oN udp_scan.txt
 <img width="910" height="208" alt="image" src="https://github.com/user-attachments/assets/7c2088c9-559a-4b03-a623-1680c9d3194a" />
 
@@ -75,12 +78,15 @@ A service version detection scan (nmap -sV) was performed on the target system (
 The Nmap scan of 127.0.0.1 revealed multiple open TCP ports, which increases the system’s attack surface if exposed beyond the local environment.
 
 •	Port 80 (HTTP):
+
 Uses an unencrypted protocol, making it vulnerable to attacks such as packet sniffing, session hijacking, and man-in-the-middle (MITM). Web applications on this port may also suffer from XSS, SQL Injection, and misconfigurations.
 
 •	Port 3000 (ppp):
+
 Commonly used for development applications. OWASP Juice Shop is intentionally vulnerable and includes OWASP Top 10 issues like SQL Injection, XSS, and broken authentication. Exposing such services publicly poses high security risks.
 
 •	Port 3306 (MySQL / MariaDB):
+
 An exposed database service is a critical risk, as attackers can attempt brute-force attacks or exploit weak credentials, potentially leading to data compromise.
 
 # Service Research
@@ -110,12 +116,15 @@ o	Insecure Authentication
 2. MySQL / MariaDB (Port 3306)
    
 •	Purpose:
+
 Port 3306 is used by MySQL/MariaDB database servers to manage and store application data, including user credentials, product information, and transaction records.
 
 •	Common Vulnerabilities:
+
 Exposed database services may be vulnerable to brute-force login attempts, weak or default credentials, SQL misconfigurations, and exploitation of known database version vulnerabilities.
 
 •	Security Best Practice:
+
 Database services should be restricted to localhost or internal networks only, protected with strong authentication, and regularly updated to prevent unauthorized access.
 
 # Network Diagram:
